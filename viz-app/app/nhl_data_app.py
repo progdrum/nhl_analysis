@@ -21,7 +21,8 @@ def goalie_stats():
         script, div = components(gc.basic_svp_graph(gdf))
         return render_template("goalies_basic.html", script=script, div=div)
     elif stats_view == 'enhanced':
-        return gc.faceted_svp_plot(gdf)
+        script, div = components(gc.faceted_svp_plot(gdf))
+        return render_template("goalies_advanced.html", script=script, div=div)
 
 
 if __name__ == '__main__':

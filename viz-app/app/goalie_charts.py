@@ -74,25 +74,25 @@ def faceted_svp_plot(goalie_df):
     source = ColumnDataSource(data=goalie_df)
 
     # Plot overall save percentage
-    overall = figure(title='Overall', plot_width=300, plot_height=300,
+    overall = figure(title='Overall', plot_width=500, plot_height=500,
                      tools=hov.TOOLS, tooltips=hov.TOOLTIPS)
     overall.circle('savePercentage', 'goalAgainstAverage', size=10, color='team_color',
                    source=source)
 
     # Plot even strength save percentage
-    even_strength = figure(title='Even Strength', plot_width=300, plot_height=300,
+    even_strength = figure(title='Even Strength', plot_width=500, plot_height=500,
                            tools=hov.TOOLS, tooltips=hov.ES_TOOLTIPS)
     even_strength.circle('evenStrengthSavePercentage', 'goalAgainstAverage',
                          size=10, color='team_color', source=source)
 
     # Plot SH save percentage
-    shorthanded = figure(title='Shorthanded', plot_width=300, plot_height=300,
+    shorthanded = figure(title='Shorthanded', plot_width=500, plot_height=500,
                          tools=hov.TOOLS, tooltips=hov.SH_TOOLTIPS)
     shorthanded.circle('shortHandedSavePercentage', 'goalAgainstAverage',
                        size=10, color='team_color', source=source)
 
     # Plot PP save percentage
-    power_play = figure(title='Power Play', plot_width=300, plot_height=300,
+    power_play = figure(title='Power Play', plot_width=500, plot_height=500,
                         tools=hov.TOOLS, tooltips=hov.PP_TOOLTIPS)
     power_play.circle('powerPlaySavePercentage', 'goalAgainstAverage',
                       size=10, color='team_color', source=source)
