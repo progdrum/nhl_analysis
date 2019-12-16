@@ -1,6 +1,5 @@
-import goalie_charts as gc
 from flask import Flask, render_template, request
-from bokeh.embed import components
+from bokeh.embed import server_document
 
 
 app = Flask(__name__)
@@ -16,13 +15,12 @@ def index():
 @app.route('/goalie-stats')
 def goalie_stats():
     stats_view = request.args.get('statsview', default='basic')
-    gdf = gc.create_goalie_df(gc.get_roster_data())
     if stats_view == 'basic':
-        script, div = components(gc.basic_svp_graph(gdf))
-        return render_template("goalies_basic.html", script=script, div=div)
+        script = server_document('https://localhost:5006/goalies_basic')
+        return render_template("goalies_basic.html", script=script)
     elif stats_view == 'enhanced':
-        script, div = components(gc.faceted_svp_plot(gdf))
-        return render_template("goalies_advanced.html", script=script, div=div)
+        script = server_document('https://localhost:5006/goalies_faceted')
+        return render_template("goalies_advanced.html", script=script)
 
 
 if __name__ == '__main__':

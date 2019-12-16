@@ -1,3 +1,5 @@
+BASE_URL = 'https://statsapi.web.nhl.com/api/v1/'
+
 TEAM_COLORS_DICT = {
     'Anaheim Ducks': '#FC4C02',
     'Arizona Coyotes': '#89222F',
