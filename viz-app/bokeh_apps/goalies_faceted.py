@@ -54,4 +54,4 @@ update()
 
 LAYOUT = column(faceted_svp_plot(), MIN_GAMES)
 curdoc().add_root(LAYOUT)
-curdoc().title = 'Basic Goalie Stats'
+curdoc().title = 'Advanced Goalie Stats'

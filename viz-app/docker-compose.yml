@@ -1,0 +1,12 @@
+version: "3"
+services:
+  flask:
+    image: "progdrum/nhl-viz-app:v0.1"
+    build: ./app
+    ports:
+      - "5000:5000"
+  bokeh:
+    image: "progdrum/nhl-bokeh-apps:v0.1"
+    build: ./bokeh_apps
+    ports:
+      - "5006:5006"
